@@ -11,6 +11,8 @@ class ProfileSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\User::all()->each(function ($user) {
+            factory(\App\Profile::class)->create(['user_id' => $user->id]);
+        });
     }
 }

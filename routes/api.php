@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -23,3 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('/posts', 'PostController@index');
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/user/{user}/posts', [UserController::class, 'posts']);
+Route::get('/posts/{post}/comments', [CommentController::class, 'index']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::put('/posts', [PostController::class, 'store']);
+Route::patch('/posts/{post}', [PostController::class, 'update']);
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);

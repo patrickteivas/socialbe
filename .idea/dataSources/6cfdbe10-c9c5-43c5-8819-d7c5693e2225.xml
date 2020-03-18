@@ -237,7 +237,6 @@
     </column>
     <index id="61" parent="14" name="users_email_unique">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="62" parent="14">
